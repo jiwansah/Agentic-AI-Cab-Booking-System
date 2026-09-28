@@ -30,6 +30,32 @@ psql -U ridepilot_user -d ridepilot password replace_with_a_secure_password
     alembic current
 
 
+This is Content in the .env file present in root dir i.e: ridepilot
+
+============================== .env ======================================
+# Active LLM provider
+LLM_PROVIDER=ollama
+
+# Ollama
+OLLAMA_BASE_URL=http://localhost:11434/v1
+OLLAMA_MODEL=gpt-oss:20b
+
+# OpenAI (only needed when switching to OpenAI)
+OPENAI_API_KEY=sk-proj-W
+OPENAI_MODEL=gpt-5-mini
+OPENAI_BASE_URL=https://api.openai.com/v1
+
+# Data base information
+DATABASE_URL=postgresql+psycopg://ridepilot_user:replace_with_a_secure_password@localhost:5432/ridepilot
+
+UBER_ENABLED=false
+UBER_ACCESS_TOKEN=
+MOCK_PROVIDER_ENABLED=true
+OLA_ENABLED=false
+OLA_ACCESS_TOKEN=
+OLA_APP_TOKEN=
+======================================================================
+
 4. Database relationships we should implement
 User
  ├── AuthSession
